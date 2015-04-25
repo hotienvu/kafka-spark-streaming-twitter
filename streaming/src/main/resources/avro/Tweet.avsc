@@ -1,0 +1,24 @@
+{
+    "namespace": "com.htvu.streaming.tweet",
+    "type": "record",
+    "name": "Tweet",
+    "doc": "avro representation of Twitter4j.Status",
+    "fields": [
+        { "name": "id", "type": "long" },
+        { "name": "text", "type": "string" },
+        { "name": "createdAt", "type": "string" },
+        {
+            "name": "user",
+            "type": {
+                "name": "User",
+                "type": "record",
+                "fields": [
+                    { "name": "id", "type": "long" },
+                    { "name": "screenName", "type": "string" },
+                    { "name": "lang", "type": "string" },
+                    { "name": "statusesCount", "type": "int" }
+                ]
+            }
+        }
+    ]
+}
